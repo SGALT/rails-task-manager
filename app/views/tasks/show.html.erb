@@ -1,0 +1,13 @@
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+
+<% if @task.completed %>
+  <input type="checkbox" aria-label="Checkbox for following text input" checked><span>This task is completed</span>
+<% else %>
+  <input type="checkbox" aria-label="Checkbox for following text input"><span>This task is not completed yet</span>
+<% end %>
+
+<br>
+<%= link_to "Back to Tasks", tasks_path %>
+<br>
+<%= link_to 'Edit task',edit_task_path, class: "btn btn-danger"  %>

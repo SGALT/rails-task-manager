@@ -1,0 +1,11 @@
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <input type="checkbox" aria-label="Checkbox for following text input" <%= 'checked' if task.completed %>>
+      <%= link_to task.title, task_path(task)  %>
+      <li><%= link_to "", task_path(task), method: :delete, data: { confirm: "Are you sure?" }, class: "far fa-trash-alt" %></li>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Create task',new_task_path, class: "btn btn-primary"  %>
